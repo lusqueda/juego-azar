@@ -4,9 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>05-objetos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Juego de Azar</title>
 </head>
 <body>
+
+    <div class="container my-5">
+
+        <h3 class="display-5 font-weight-bold mb-3">JUEGO DEL AZAR</h3>
+        <hr>
+
+        <form action="" method="POST" id="formulario" onsubmit="return false;">
+
+            <div class="form-group">
+                <label for="players">Cantidad de Jugadores</label>
+                <input type="text" class="form-control" id="players">
+                <div class="alert alert-danger my-2" role="alert" id="error_players">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="max">Cantidad de Numeros por Jugadores</label>
+                <input type="text" class="form-control" id="max">
+                <div class="alert alert-danger my-2" role="alert" id="error_max">
+                </div>
+            </div>
+
+            <input type="submit" value="Configurar" id="submit" class="btn btn-primary">
+        
+        </form>
+
+        <button type="button" id="llenarCarton" class="btn btn-success">Llenar Cartones</button>
+        <button type="button" id="reset" class="btn btn-danger">Reset</button>
+
+        <div class="alert alert-secondary my-5" role="alert" id="alerta">
+            <h3>Información de Configuracion</h3>
+            <hr>
+            <p class="font-weight-bold">
+                Jugadores: <span class="font-weight-light" id="infoPlayers"></span>
+            </p>
+
+            <p class="font-weight-bold">
+                Cantidad Numeros: <span class="font-weight-light" id="infoMax"></span>
+            </p>
+        </div>
+
+        <div class="alert alert-secondary my-5" role="alert" id="alerta1">
+            <h3>Información de Jugadores</h3>
+            <hr>
+            <div class="colum" id="insertDOMPlayers"></div>
+        </div>
+
+        <div id="tabla"  class="container my-5" >
+            <div class="colum" id="insertDOMcontent"></div>	
+		</div>
+
+
+    </div>    
+
+
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
