@@ -125,9 +125,11 @@ if( typeof window === 'object' ){
             // guardamos datos que ingresamos en los input
             let players = document.querySelector('#players').value
             let max = document.querySelector('#max').value
+            let validaNumero1 = checkNumero( players )
+            let validaNumero2 = checkNumero( max )
 
             if( players && max ){
-                if( error_max.style.display == 'none' && error_players.style.display == 'none' ) {
+                if( validaNumero1 && validaNumero2 ) {
 
                     let config = new game (players,max);
 
@@ -146,10 +148,16 @@ if( typeof window === 'object' ){
                     infoConfig.style.display = 'block'
                     
                 } else {
-                    alert('Debe validar los datos')
+                    error_max.style.display = "block";
+                    error_players.style.display = "block";
+                    error_max.innerHTML = `Debe Validar los datos`  
+                    error_players.innerHTML = `Debe Validar los datos`   
                 }   
             } else {
-                alert('Debe llenar los campos')
+                error_max.style.display = "block";
+                error_players.style.display = "block";
+                error_max.innerHTML = `Debe llenar los campos`  
+                error_players.innerHTML = `Debe llenar los campos`     
             }
             
         })
